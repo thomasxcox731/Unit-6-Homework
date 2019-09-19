@@ -38,6 +38,7 @@ $(document).on("click",".topics", function () {
             // Setting the catImage src attribute to imageUrl
             animalImage.attr("src", imageUrl);
             animalImage.attr("alt", "animal image");
+            animalImage.addClass("gif");
             // Prepending the animalImage to the images div
             $("#images").prepend(animalImage);
         })
@@ -46,7 +47,16 @@ $(document).on("click",".topics", function () {
 
 
 //When the user clicks the gif, it animates. Clicked again, becomes static
-
+$("gif").on("click", function(){
+    var state = $(this).attr("data-state");
+    if (state==="still"){
+        $(this).attr("src", $(this).attr("animate"));
+        $(this).attr("data-state", "animiate");
+    } else {
+        $(this).attr("src", $(this).attr("still"));
+        $(this).attr("data-state", "still");
+    }
+});
 //Display ratings under gifs
 
 //Add form that takes a value from a user input box and adds it to the topics array 
