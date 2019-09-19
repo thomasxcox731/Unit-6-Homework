@@ -23,7 +23,7 @@ $(document).on("click",".topics", function () {
     //page gets 10 static gif's from the api and puts it on the page
     //Link to API with query URL 
     var topicClicked = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=9kQ9GZBwVwfnaxFBovjF05JRmaYvZpAi&tag=" + topicClicked;
+    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=9kQ9GZBwVwfnaxFBovjF05JRmaYvZpAi&tag=animals&tag=" + topicClicked;
     $.ajax({
         url: queryURL,
         method: "GET",

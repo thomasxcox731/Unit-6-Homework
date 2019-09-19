@@ -1,0 +1,16 @@
+body {
+    width: 1024px;
+    margin: 0 auto;
+}
+.jumbotron-fluid {
+    background: rgb(33, 33, 78);
+    color: rgb(177, 153, 153);
+}
+.display-4 {
+    text-align: center;
+}
+img {
+    width: 350px;
+    height: 250px;
+    margin: 10px;
+}
