@@ -2,20 +2,9 @@ body {
     width: 1024px;
     margin: 0 auto;
 }
-.jumbotron-fluid {
-    background: rgb(33, 33, 78);
-    color: rgb(177, 153, 153);
-}
-.display-4 {
-    text-align: center;
-}
-/* .mainBody {
-    background: rgb(86, 86, 133);
-    color: rgb(233, 227, 227);
-    padding: 10px;
-} */
+
 img {
-    width: 350px;
-    height: 250px;
+    width: 250px;
+    height: 150px;
     margin: 10px;
 }

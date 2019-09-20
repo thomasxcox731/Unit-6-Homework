@@ -12,16 +12,17 @@
 
 <body>
     <header>
-        <div class="container">
-            <h1>Animal Apparitions</h1>
-        </div>
+        <h1>Animal Apparitions</h1>
     </header>
     <div class="container">
-        <div class=mainBody id="button"></div><br>
+        <div id="button"></div><br>
         <div class="form">
-            <label class="mainBody">Add an Animal</label>
-            <textarea id="form" rows="1"></textarea><br>
-            <button input id="add-topic" type="submit">Submit</button>
+            <form action="/action_page.php">
+                Add an Animal:<br>
+                <input type="text" id="animal-input" name="animal">
+                <br>
+                <input id="add-animal" type="submit" value="Submit">
+            </form>
         </div>
         <div id="gifs-appear-here"></div>
     </div>

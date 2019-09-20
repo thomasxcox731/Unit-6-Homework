@@ -15,9 +15,9 @@ function renderButtons() {
 //When the button is clicked
 $(document).on("click", ".topics", function () {
     var topicClicked = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicClicked + "api_key=9kQ9GZBwVwfnaxFBovjF05JRmaYvZpAi&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicClicked + "&api_key=9kQ9GZBwVwfnaxFBovjF05JRmaYvZpAi&limit=10";
     $.ajax({
-        URL: queryURL,
+        url: queryURL,
         method: "GET",
     })
         .then(function (response) {
