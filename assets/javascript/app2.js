@@ -33,10 +33,26 @@ $(document).on("click", ".topics", function () {
                     Image.attr("src", results[i].images.fixed_height.url);
                     Image.attr("data-still", results[i].images.fixed_height_still.url);
                     Image.attr("data-animate", results[i].images.fixed_height.url);
+                    Image.attr("data-state", "still");
+                    Image.addClass("gif");
                     //Adding info to HTML
                     gifDiv.append(p);
                     gifDiv.append(Image);
                     $("#gifs-appear-here").prepend(gifDiv);
+                    $(".gif").on("click", function() {
+                        // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                        var state = Image.attr("data-state");
+                        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                        // Then, set the image's data-state to animate
+                        // Else set src to the data-still value
+                        if (state === "still") {
+                          Image.attr("src", Image.attr("data-animate"));
+                          Image.attr("data-state", "animate");
+                        } else {
+                          Image.attr("src", Image.attr("data-still"));
+                          Image.attr("data-state", "still");
+                        }
+                      });
                 }
             }
         })
@@ -48,4 +64,20 @@ $("#add-animal").on("click", function(event) {
     topics.push(newBtn);
     renderButtons();
 });
+//Adding pausing functionality to gifs
+
+// $(".gif").on("click", function() {
+//     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+//     var state = Image.attr("data-state");
+//     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+//     // Then, set the image's data-state to animate
+//     // Else set src to the data-still value
+//     if (state === "still") {
+//       Image.attr("src", Image.attr("data-animate"));
+//       Image.attr("data-state", "animate");
+//     } else {
+//       Image.attr("src", Image.attr("data-still"));
+//       Image.attr("data-state", "still");
+//     }
+//   });
 renderButtons();
