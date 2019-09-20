@@ -21,6 +21,8 @@ $(document).on("click", ".topics", function () {
         method: "GET",
     })
         .then(function (response) {
+            console.log(queryURL);
+            console.log(response);
             var results = response.data;
             for (var i = 0; i < results.length; i++) {
                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
@@ -29,11 +31,21 @@ $(document).on("click", ".topics", function () {
                     var p = $("<p>").text("Rating: " + rating);
                     var Image = $("<img>");
                     Image.attr("src", results[i].images.fixed_height.url);
+                    Image.attr("data-still", results[i].images.fixed_height_still.url);
+                    Image.attr("data-animate", results[i].images.fixed_height.url);
+                    //Adding info to HTML
                     gifDiv.append(p);
                     gifDiv.append(Image);
                     $("#gifs-appear-here").prepend(gifDiv);
                 }
             }
         })
+});
+//Adding new custom buttons
+$("#add-animal").on("click", function(event) {
+    event.preventDefault();
+    var newBtn = $("#animal-input").val().trim();
+    topics.push(newBtn);
+    renderButtons();
 });
 renderButtons();
