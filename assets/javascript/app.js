@@ -10,7 +10,7 @@ function renderButtons() {
     $("#button").empty();
     for (i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.attr("id","button");
+        a.attr("id", "button");
         a.addClass("topics")
         a.attr("data-name", topics[i]);
         a.text(topics[i]);
@@ -19,7 +19,7 @@ function renderButtons() {
     }
 }
 //When the button is clicked,
-$(document).on("click",".topics", function () {
+$(document).on("click", ".topics", function () {
     //page gets 10 static gif's from the api and puts it on the page
     //Link to API with query URL 
     var topicClicked = $(this).attr("data-name");
@@ -41,15 +41,17 @@ $(document).on("click",".topics", function () {
             animalImage.addClass("gif");
             // Prepending the animalImage to the images div
             $("#images").prepend(animalImage);
+            // $("#rating").append("<p>" + "response.data[0].rating" + "</p>");
+            console.log(response.data.rating);
         })
 
 })
 
 
 //When the user clicks the gif, it animates. Clicked again, becomes static
-$("gif").on("click", function(){
+$("gif").on("click", function () {
     var state = $(this).attr("data-state");
-    if (state==="still"){
+    if (state === "still") {
         $(this).attr("src", $(this).attr("animate"));
         $(this).attr("data-state", "animiate");
     } else {
@@ -61,9 +63,11 @@ $("gif").on("click", function(){
 
 //Add form that takes a value from a user input box and adds it to the topics array 
 function newSubmit() {
-    $(document).ready(function ($) {
+    $(document).ready(function () {
         $("#add-topic").on("click", function () {
-            topics.push("#submit id")
+            var newAnimal = $("#exampleFormControlTextarea1").val().trim();
+            topics.push(newAnimal);
+            renderButtons();
         })
     })
     buttons();

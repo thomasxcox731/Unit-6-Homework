@@ -9,6 +9,11 @@ body {
 .display-4 {
     text-align: center;
 }
+/* .mainBody {
+    background: rgb(86, 86, 133);
+    color: rgb(233, 227, 227);
+    padding: 10px;
+} */
 img {
     width: 350px;
     height: 250px;
