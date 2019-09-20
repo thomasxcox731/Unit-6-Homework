@@ -1,8 +1,28 @@
 body {
     width: 1024px;
     margin: 0 auto;
+    background: rgb(226, 226, 173);
 }
-
+header {
+    text-align: center;
+    font-size:50px;
+    padding: 30px; 
+    background: rgb(177, 177, 122);
+}
+#button {
+    margin: 3px;
+}
+.container {
+    padding: 20px;
+    text-align: center;
+    background: rgb(75, 107, 75);
+}
+#animal-input, #add-animal {
+    margin: 5px;
+}
+p {
+    margin: 10px;
+}
 img {
     width: 250px;
     height: 150px;
